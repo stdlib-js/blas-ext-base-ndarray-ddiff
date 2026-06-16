@@ -41,14 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-ndarray-ddiff
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import ddiff from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-ddiff@esm/index.mjs';
+var ddiff = require( '@stdlib/blas-ext-base-ndarray-ddiff' );
 ```
 
 #### ddiff( arrays )
@@ -56,8 +74,8 @@ import ddiff from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-d
 Calculates the k-th discrete forward difference of a one-dimensional double-precision floating-point ndarray.
 
 ```javascript
-import Float64Vector from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-vector-float64@esm/index.mjs';
-import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@esm/index.mjs';
+var Float64Vector = require( '@stdlib/ndarray-vector-float64' );
+var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
 
 var x = new Float64Vector( [ 2.0, 4.0, 6.0, 8.0, 10.0 ] );
 var prepend = new Float64Vector( [ 1.0 ] );
@@ -103,17 +121,12 @@ The function has the following parameters:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-discrete-uniform@esm/index.mjs';
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros@esm/index.mjs';
-import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@esm/index.mjs';
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-import ddiff from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-ddiff@esm/index.mjs';
+```javascript
+var discreteUniform = require( '@stdlib/random-discrete-uniform' );
+var zeros = require( '@stdlib/ndarray-zeros' );
+var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var ddiff = require( '@stdlib/blas-ext-base-ndarray-ddiff' );
 
 var N = 10;
 var N1 = 2;
@@ -138,15 +151,19 @@ console.log( 'append: ', ndarray2array( a ) );
 
 ddiff( [ x, p, a, out, w, knd ] );
 console.log( 'out: ', ndarray2array( out ) );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
 
 <!-- /.examples -->
+
+<!-- Section to include cited references. If references are included, add a horizontal rule *before* the section. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="references">
+
+</section>
+
+<!-- /.references -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -165,7 +182,7 @@ console.log( 'out: ', ndarray2array( out ) );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
